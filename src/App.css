@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: pink;
+  background-color: rgb(119, 110, 111);
 }
 
 .App-logo {
@@ -17,6 +17,7 @@
   justify-content: center;
   font-size: calc (10px + 2vmin);
   color: pink;
+  text-align: center;
 }
 /* .App-link {
   color: #61dafb;
@@ -63,12 +64,14 @@ th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
 h1 {
-  color: black;
+  color: white;
+  text-align: center;
 }
 
 h1 {
-  color: black;
+  color: white;
   padding: 60px;
   text-align: center;
   font-size: 50px;
