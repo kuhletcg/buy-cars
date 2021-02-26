@@ -2,7 +2,7 @@ import React from "react";
 import App from "./App";
 import "./App.css";
 
-function ViewCars() {
+function Shop() {
   return (
     <div className="wrapper">
       <h2>Car page</h2>
@@ -54,4 +54,4 @@ function ViewCars() {
   );
 }
 
-export default ViewCars;
+export default Shop;
