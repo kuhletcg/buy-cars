@@ -1,61 +1,85 @@
-import React from "react";
+import React, { useState } from "react";
 import App from "./App";
 import "./App.css";
 
 function About() {
+  const [formInfo, setFormInfo] = useState({
+    name: "",
+    surname: "",
+    address: "",
+    email: "",
+  });
+  const [saveInfo, setSaveInfo] = useState([]);
+
+  function handleChange(event) {
+    setFormInfo({ ...formInfo, [event.target.name]: event.target.value });
+  }
+
+  function handleSubmit(event) {
+    const { name, surname, address, email } = formInfo;
+    event.preventDefault();
+    const newInfo = { ...formInfo, name, surname, address, email };
+    setSaveInfo([...saveInfo, newInfo]);
+    console.log(saveInfo);
+  }
+
   return (
     <div className="wrapper">
       <h2>Registration page</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <fieldset>
           <label>
             <p>Name</p>
-            <input name="name" />
+            <input
+              type="text"
+              name="name"
+              value={formInfo.name}
+              onChange={handleChange}
+            />
           </label>
           <label>
             <p>Surname</p>
-            <input name="surname" />
+            <input
+              type="text"
+              name="surname"
+              value={formInfo.surname}
+              onChange={handleChange}
+            />
           </label>
           <label>
             <p>Address</p>
-            <input name="address" />
+            <input
+              type="address"
+              name="address"
+              value={formInfo.address}
+              onChange={handleChange}
+            />
           </label>
           <label>
             <p>Email</p>
-            <input name="email" />
+            <input
+              type="email"
+              name="email"
+              value={formInfo.email}
+              onChange={handleChange}
+            />
           </label>
         </fieldset>
         <button type="submit">Submit</button>
       </form>
+
+      {saveInfo.map((info) => {
+        return (
+          <div>
+            <h2>{info.name}</h2>
+            <h2>{info.surname}</h2>
+            <h2>{info.address}</h2>
+            <h2>{info.email}</h2>
+          </div>
+        );
+      })}
     </div>
   );
 }
 
-//     <div>
-//       <h1>About page</h1>
-//       <p>
-//         <table>
-//           <tr>
-//             <th>Name</th>
-//             <th>Surname</th>
-//             <th>Location</th>
-//             <th>Email</th>
-//           </tr>
-//           <tr>
-//             <th>{}</th>
-//             <th>Nkabinde</th>
-//             <th>Riverside</th>
-//             <th>Kuhle@gmail.com</th>
-//           </tr>
-//           <tr>
-//             <th>Sizwe</th>
-//             <th>Zwane</th>
-//             <th>Riverside</th>
-//             <th>mszweesi@gmail.com</th>
-//           </tr>
-//         </table>
-//       </p>
-//     </div>
-//   );
-// }
 export default About;
