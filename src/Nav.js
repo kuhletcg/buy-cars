@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Nav() {
   const navStyle = {
-    color: "Black",
+    color: "White",
   };
 
   return (
@@ -15,11 +15,14 @@ function Nav() {
         PRE-OWNED
       </h1>
       <ul className="nav-links">
-        <Link style={navStyle} to="/about">
-          <li>About</li>
+        <Link style={navStyle} to="/login">
+          <li>LogIn</li>
         </Link>
         <Link to="/shop" style={navStyle}>
           <li>Shop</li>
+        </Link>
+        <Link to="/about" style={navStyle}>
+          <li>About</li>
         </Link>
       </ul>
     </nav>
