@@ -8,6 +8,7 @@ function About() {
     surname: "",
     address: "",
     email: "",
+    car: "",
   });
   const [saveInfo, setSaveInfo] = useState([]);
 
@@ -16,9 +17,9 @@ function About() {
   }
 
   function handleSubmit(event) {
-    const { name, surname, address, email } = formInfo;
+    const { name, surname, address, email, car } = formInfo;
     event.preventDefault();
-    const newInfo = { ...formInfo, name, surname, address, email };
+    const newInfo = { ...formInfo, name, surname, address, email, car };
     setSaveInfo([...saveInfo, newInfo]);
     console.log(saveInfo);
   }
@@ -64,6 +65,22 @@ function About() {
               onChange={handleChange}
             />
           </label>
+          <label>
+            <p>Car</p>
+            <input
+              type="car"
+              name="car"
+              value={formInfo.car}
+              onChange={handleChange}
+            />
+            <select name="menu_files" class="form-control">
+              <option id="text1"> Mercerdes </option>
+              <option id="text2"> Mazda</option>
+              <option id="text2"> GTI Golf 7</option>
+              <option id="text1"> VW Polo</option>
+              <option id="text2"> </option>
+            </select>
+          </label>
         </fieldset>
         <button type="submit">Submit</button>
       </form>
@@ -75,6 +92,7 @@ function About() {
             <h2>{info.surname}</h2>
             <h2>{info.address}</h2>
             <h2>{info.email}</h2>
+            <h2>{info.car}</h2>
           </div>
         );
       })}
