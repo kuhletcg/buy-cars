@@ -4,6 +4,7 @@ import Nav from "./Nav";
 import About from "./About";
 import Shop from "./Shop";
 import LogIn from "./LogIn";
+import Payments from "./Payments";
 import ItemDetail from "./ItemDetail";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import axios from "axios";
@@ -18,6 +19,7 @@ function App() {
           <Route path="/about" component={About} />
           <Route path="/shop" component={Shop} />
           <Route path="/LogIn" component={LogIn} />
+          <Route path="/payments" component={Payments} />
           <Route path="/shop/:id" component={ItemDetail} />
         </Switch>
       </div>
@@ -27,7 +29,7 @@ function App() {
 const Home = () => (
   <div>
     <h1>Home Page</h1>
-    <button onclick="myFunction()">LogIn</button>
+    {/* <button onclick="myFunction()">LogIn</button> */}
   </div>
 );
 
