@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import App from "./App";
 import "./App.css";
+import { Link } from "react-router-dom";
 
 function About() {
   const [formInfo, setFormInfo] = useState({
@@ -82,7 +83,9 @@ function About() {
             </select>
           </label>
         </fieldset>
-        <button type="submit">Submit</button>
+        <Link to="/Payments">
+          <button type="submit">Submit</button>
+        </Link>
       </form>
 
       {saveInfo.map((info) => {
