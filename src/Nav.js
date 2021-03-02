@@ -24,6 +24,9 @@ function Nav() {
         <Link to="/about" style={navStyle}>
           <li>About</li>
         </Link>
+        <Link to="/Payments" style={navStyle}>
+          <li>Payments</li>
+        </Link>
       </ul>
     </nav>
   );
