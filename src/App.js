@@ -7,7 +7,6 @@ import LogIn from "./LogIn";
 import Payments from "./Payments";
 import ItemDetail from "./ItemDetail";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import axios from "axios";
 
 function App() {
   return (
@@ -29,7 +28,6 @@ function App() {
 const Home = () => (
   <div>
     <h1>Home Page</h1>
-    {/* <button onclick="myFunction()">LogIn</button> */}
   </div>
 );
 
